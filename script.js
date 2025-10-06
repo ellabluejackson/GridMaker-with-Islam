@@ -7,7 +7,7 @@ let colorSelected;
 function addR() {
     const grid = document.getElementById("grid");
     const newRow = document.createElement("tr");
-    const rows = grid.getElementById("tr");// Replace this line with your code.
+    const rows = grid.getElementByTagName("tr");// Replace this line with your code.
     
     if(rows.length == 0){
         const cell = document.createElement("td");
@@ -22,12 +22,12 @@ function addR() {
         }
         
     }
-}
+} grid.appendChild(newRow);
 
 // Add a column
 function addC() {
     const grid = document.getElementById("grid")
-    const rows = gird.getElementsByTagName("tr");
+    const rows = grid.getElementsByTagName("tr");
         
     if(rows.length ==0){
         const newRow = document.createElement("tr");
@@ -38,12 +38,12 @@ function addC() {
     }else{
         for (let i=0; i<rows.length; i++){
             const cell = document.createElement ("td")
-            cell.onclick = function() { this.style.backroundColor = colorSelected; }; 
+            cell.onclick = function() { this.style.backgroundColor = colorSelected; }; 
             rows[i].appendChild(cell);
         
         }
     }
-    grid.appendChild(newRow);
+    
 }
 
 // Remove a row

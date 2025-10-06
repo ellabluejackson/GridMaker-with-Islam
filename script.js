@@ -7,7 +7,7 @@ let colorSelected;
 function addR() {
     const grid = document.getElementById("grid");
     const newRow = document.createElement("tr");
-    const rows = grid.getElementByTagName("tr");// Replace this line with your code.
+    const rows = grid.getElementsByTagName("tr");// Replace this line with your code.
     
     if(rows.length == 0){
         const cell = document.createElement("td");
@@ -22,7 +22,8 @@ function addR() {
         }
         
     }
-} grid.appendChild(newRow);
+    grid.appendChild(newRow);
+} 
 
 // Add a column
 function addC() {

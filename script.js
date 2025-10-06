@@ -5,22 +5,67 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    const grid = document.getElementById("grid");
+    const newRow = document.createElement("tr");
+    const rows = grid.getElementById("tr");// Replace this line with your code.
+    
+    if(rows.length == 0){
+        const cell = document.createElement("td");
+        cell.onclick = function() {this.style.backgroundColor = colorSelected; };
+        newRow.appendChild(cell);
+    }else{
+        const cellCount = rows[0].getElementsByTagName("td").length;
+        for (let i = 0; i < cellCount; i++) {
+            const cell = document.createElement("td");
+            cell.onclick = function() { this.style.backgroundColor = colorSelected; };
+            newRow.appendChild(cell);
+        }
+        
+    }
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    const grid = document.getElementById("grid")
+    const rows = gird.getElementsByTagName("tr");
+        
+    if(rows.length ==0){
+        const newRow = document.createElement("tr");
+        const cell = document.createElement("td");
+        cell.onclick = function() {this.style.backgroundColor = colorSelected;} ;
+        newRow.appendChild(cell);
+        grid.appendChild(newRow);
+    }else{
+        for (let i=0; i<rows.length; i++){
+            const cell = document.createElement ("td")
+            cell.onclick = function() { this.style.backroundColor = colorSelected; }; 
+            rows[i].appendChild(cell);
+        
+        }
+    }
+    grid.appendChild(newRow);
 }
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    const grid = document.getElementById("grid");
+    const rows = grid.getElementsByTagName("tr");
+    if (rows.length > 0) {
+        grid.removeChild(rows[rows.length - 1]);
+    }
 }
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    const grid = document.getElementById("grid");
+    const rows = grid.getElementsByTagName("tr");
+    
+    for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName("td");
+        if (cells.length > 0) {
+            rows[i].removeChild(cells[cells.length - 1]);
+        }
+    }
 }
 
 // Set global variable for selected color

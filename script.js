@@ -81,8 +81,12 @@ function fillU(){
 }
 
 // Fill all cells
-function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+function fillAll() {
+    const cells = document.getElementsByTagName("td");
+
+    for (let cell of cells) {
+        cell.style.backgroundColor = colorSelected;
+    }
 }
 
 // Clear all cells

@@ -86,6 +86,10 @@ function fillAll(){
 }
 
 // Clear all cells
-function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+function clearAll() {
+    const cells = document.getElementsByTagName("td");
+
+    for (let cell of cells) {
+        cell.style.backgroundColor = "";
+    }
 }
